@@ -32,12 +32,6 @@ function Movie() {
     });
   };
 
-  const genderIdentify = (number) => {
-    return number.toLocaleString("en-US", {
-      style: "age",
-    });
-  };
-
   const changeCase = (event) => {
     return event.toUpperCase();
   };
@@ -85,7 +79,7 @@ function Movie() {
             <h3>
               <BsHourglassSplit /> Gênero:
             </h3>
-            <p> {genderIdentify(movie.genres.map((n) => n.name))}</p>
+            <p> {movie.genres.map((n) => n.name).join(', ') + '.'}</p>
           </div>
 
           <div className="info description">
